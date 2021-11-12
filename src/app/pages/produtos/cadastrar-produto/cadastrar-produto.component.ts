@@ -31,7 +31,7 @@ export class CadastrarProdutoComponent implements OnInit {
     const idEdit = this.activatedRoute.snapshot.params['id'];
 
     switch(this.router.url){
-      case "https://front-angular.vercel.app/produtos/cadastrar":
+      case "produtos/cadastrar":
         this.opcao = "Cadastrar";
         this.textButton = "success";
         this.enviar = false;
