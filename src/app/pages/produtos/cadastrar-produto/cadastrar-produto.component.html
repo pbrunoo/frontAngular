@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <h1 class="my-3 text-primary">{{opcao}} Produto</h1>
+  </div>
+  <div class="card shadow">
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group" style="margin: 10px;">
+              <label for="nome">Nome do Produto</label>
+              <input type="text" name="produto" [(ngModel)]="produto.nome" class="form-control" placeholder="Digite o nome do Produto">
+            </div>
+          </div>
+        </div> <!--fim nome-->
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group" style="margin: 10px;">
+              <label for="nome">Validade</label>
+              <input type="date" name="data" [(ngModel)]="produto.validade" class="form-control">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group" style="margin: 10px;">
+              <label for="nome">Preço</label>
+              <input type="number" name="valor" [(ngModel)]="produto.preco" class="form-control" placeholder="R$ 0,00">
+            </div>
+          </div>
+        </div> <!--fim validade-->
+
+        <div class="row">
+          <div class="col">
+            <button  style="margin: 10px;" class="btn btn-primary" routerLink="/produtos">Voltar</button>
+            <button  style="margin: 10px;" class="btn btn-{{ textButton }}" (click)="save()">{{ opcao }}</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

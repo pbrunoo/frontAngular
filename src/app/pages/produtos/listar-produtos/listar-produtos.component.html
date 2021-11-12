@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <h1 class="my-3 text-primary">
+        Listar Produtos
+      </h1>
+    </div>
+    <div class="col-2 d-flex">
+      <button routerLink="/produtos/cadastrar" class="btn btn-success p-2 bd-highlight" type="button">Cadastrar</button>
+    </div>
+
+  </div>
+  <div class="card shadow">
+    <table class="table table-resposive table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Validade</th>
+          <th>Valor</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let course of listCourse">
+          <td>{{course.id}}</td>
+          <td>{{course.nome}}</td>
+          <td>{{course.validade | date: 'shortDate'}}</td>
+          <td>{{course.preco | currency: 'BRL'}}</td>
+          <td>
+            <button class="btn btn-warning" routerLink="/produtos/atualizar/{{ course.id }}"><i class="fa fa-pencil" aria-hidden=""></i></button>
+            <button class="btn btn-danger ml-2" [swal]="{
+              title: 'ATENÇÃO',
+              text: 'Deseja excluir o produto: ' + course.nome + ' ?',
+              showDenyButton: true,
+              denyButtonText: 'Não',
+              icon: 'warning'
+            }"(confirm)="deletar(course)"><i class="fa fa-trash" aria-hidden=""></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
