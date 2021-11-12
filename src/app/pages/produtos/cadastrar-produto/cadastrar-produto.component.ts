@@ -33,6 +33,9 @@ export class CadastrarProdutoComponent implements OnInit {
     this.textButton = "success";
     this.enviar = false;
 
+    this.opcao = "Cadastrar";
+    this.textButton = "success";
+    this.enviar = false;
     switch(idEdit){
 
       case `${idEdit}`:
@@ -69,7 +72,6 @@ export class CadastrarProdutoComponent implements OnInit {
           `${this.produto.nome} foi editado.`,
           'toast-success'
         );
-        this.router.navigate(['/produtos']);
       });
       return;
     }
