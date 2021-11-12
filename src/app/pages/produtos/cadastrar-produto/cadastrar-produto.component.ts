@@ -29,14 +29,13 @@ export class CadastrarProdutoComponent implements OnInit {
   ngOnInit(): void {
 
     const idEdit = this.activatedRoute.snapshot.params['id'];
+    this.opcao = "Cadastrar";
+    this.textButton = "success";
+    this.enviar = false;
 
-    switch(this.router.url){
-      case "https://front-angular.vercel.app/produtos/cadastrar":
-        this.opcao = "Cadastrar";
-        this.textButton = "success";
-        this.enviar = false;
-      break;
-      case `/produtos/atualizar/${idEdit}`:
+    switch(idEdit){
+
+      case `${idEdit}`:
         this.opcao = "Editar";
         this.textButton = "warning";
         this.enviar = true;
