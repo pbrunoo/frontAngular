@@ -30,10 +30,6 @@ export class CadastrarProdutoComponent implements OnInit {
 
     const idEdit = this.activatedRoute.snapshot.params['id'];
 
-    this.opcao = "Cadastrar";
-    this.textButton = "success";
-    this.enviar = false;
-
     switch(idEdit){
 
       case `${idEdit}`:
