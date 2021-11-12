@@ -45,8 +45,8 @@ export class CadastrarProdutoComponent implements OnInit {
         });
 
       break;
-        console.log(this.router.url);
     }
+    console.log(this.router.url);
   }
 
   save(): void {
@@ -71,7 +71,6 @@ export class CadastrarProdutoComponent implements OnInit {
           `${this.produto.nome} foi editado.`,
           'toast-success'
         );
-        this.router.navigate(['/produtos']);
       });
       return;
     }
