@@ -45,6 +45,7 @@ export class CadastrarProdutoComponent implements OnInit {
         });
 
       break;
+        console.log(this.router.url);
     }
   }
 
