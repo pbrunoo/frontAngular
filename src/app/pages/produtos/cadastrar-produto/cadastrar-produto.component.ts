@@ -10,9 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CadastrarProdutoComponent implements OnInit {
 
-  opcao!: string;
-  textButton!: string;
-  enviar!: boolean;
+  opcao = "Cadastrar";
+  textButton = "success";
+  enviar = false;
 
   produto: Produto = {
     nome: '',
@@ -29,13 +29,11 @@ export class CadastrarProdutoComponent implements OnInit {
   ngOnInit(): void {
 
     const idEdit = this.activatedRoute.snapshot.params['id'];
-    this.opcao = "Cadastrar";
-    this.textButton = "success";
-    this.enviar = false;
 
     this.opcao = "Cadastrar";
     this.textButton = "success";
     this.enviar = false;
+
     switch(idEdit){
 
       case `${idEdit}`:
@@ -45,7 +43,6 @@ export class CadastrarProdutoComponent implements OnInit {
         this.produtosService.searchId(idEdit).subscribe(retorno => {
           this.produto = retorno;
         });
-
       break;
     }
   }
