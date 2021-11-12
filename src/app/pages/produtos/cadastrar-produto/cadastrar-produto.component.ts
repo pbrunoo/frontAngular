@@ -30,13 +30,13 @@ export class CadastrarProdutoComponent implements OnInit {
 
     const idEdit = this.activatedRoute.snapshot.params['id'];
 
-    switch(this.router.url){
-      case "produtos/cadastrar":
+    switch(idEdit){
+      case " ":
         this.opcao = "Cadastrar";
         this.textButton = "success";
         this.enviar = false;
       break;
-      case `/produtos/atualizar/${idEdit}`:
+      case `${idEdit}`:
         this.opcao = "Editar";
         this.textButton = "warning";
         this.enviar = true;
@@ -46,7 +46,6 @@ export class CadastrarProdutoComponent implements OnInit {
 
       break;
     }
-    console.log(this.router.url);
   }
 
   save(): void {
